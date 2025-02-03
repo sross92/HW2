@@ -21,8 +21,13 @@ def Probability(PDF, args, c, GT=True):
     :return: probability value
     """
     mu, sig = args
-    p = Simpson(PDF, (mu, sig, mu - 5 * sig, 0))
-    return p
+    lower_limit = mu - 5 * sig
+    upper_limit = c
+    integral = Simpson(PDF, (mu, sig, lower_limit, upper_limit)) #call the simpson function and arguments
+    if GT:
+        return 1 - integral
+    else:
+        return integral
 
 def GPDF(args):
     """
