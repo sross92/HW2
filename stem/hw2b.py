@@ -19,7 +19,7 @@ def main():
        fn2:  cos(2x)*x**3; with x0=1, x1= 2, maxiter = 15 and xtol = 1e-8
        fn2:  cos(2x) * x^3; with x0=1, x1= 2, maxiter = 3 and xtol = 1e-8
 
-      
+
     :return: nothing, just print results
     """
     r1 = Secant(fn1,1, 2, 5,1e-4) #calls Secant with the argument values listed being used
