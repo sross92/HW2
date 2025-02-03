@@ -1,3 +1,4 @@
+#consulted with ChatGPT and Jay Newfield to work through questions and bugs
 #region imports
 from math import sqrt, pi, exp
 from NumericalMethods import GPDF, Probability
