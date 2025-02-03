@@ -56,7 +56,7 @@ def Simpson(fn, args, N=100):
     2. compute fx at each x value between lhl and rhl
     3. sum the even and odd values of fx as prescribed
     4. return the area beneath the function fx
-    :param fx: some function of x to integrate
+    :param fn: some function of x to integrate
     :param args: a tuple containing (mean, stDev, lhl, rhl)
     :return: the area beneath the function between lhl and rhl
     """
