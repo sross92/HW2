@@ -9,7 +9,8 @@ def fn1(x):
     pass
 
 def fn2(x):
-    pass
+    """ Function 2: cos(2x) * x^3 """
+    return cos(2 * x) * x ** 3
 
 def main():
     """
