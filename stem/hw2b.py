@@ -22,12 +22,13 @@ def main():
        I observe that for functions 2 and 3, the answer should be pi/2 or about 1.57
     :return: nothing, just print results
     """
-    r1 = Secant(fn1, 1, 2, 5,1e-4)
-    r2 = Secant(fn2, 1,2,15, 1e-8)
-    r3 = Secant(fn2,1,2,3,1e-8)
-    print("root of fn1 = {root:0.4f}, after {iter :0d} iterations".format(root=r1[0], iter=r1[1]))
-    #etc.
-    pass
+    r1 = Secant(fn1,1, 2, 5,1e-4) #calls Secant with the argument values listed being used
+    r2 = Secant(fn2, 1,2,15, 1e-8) #calls Secant with the argument values listed being used
+    r3 = Secant(fn2,1,2,3,1e-8) #calls Secant with the argument values listed being used
+    print("Root of fn1 = {:.4f}".format(r1))
+    print("Root of fn2 (maxiter=15) = {:.4f}".format(r2))
+    print("Root of fn2 (maxiter=3) = {:.4f}".format(r3))
+
 #endregion
 
 if __name__=="__main__":
