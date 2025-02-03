@@ -40,5 +40,10 @@ def main():
     Aaug2 = [[1, -10, 2, 4, 2],[3, 1, 4, 12, 12],[9, 2, 3, 4, 21],[-1, 2, 7, 3, 37]]
     x2 = [0, 0, 0, 0]  # Starting with a zero vector
 
-if __name__=="__main":
+    sol2 = solve_linear_system(Aaug2, x2)
+    print("Solution for the second system is:")
+    for i, val in enumerate(sol2, start=1):
+        print(f"x{i} = {val:.4f}")
+
+if __name__ == "__main__":
     main()
