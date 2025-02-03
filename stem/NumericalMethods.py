@@ -58,6 +58,7 @@ def Simpson(fn, args, N=100):
     4. return the area beneath the function fx
     :param fn: some function of x to integrate
     :param args: a tuple containing (mean, stDev, lhl, rhl)
+    :param N: number of subintervals (should be even to prevent incrementation)
     :return: the area beneath the function between lhl and rhl
     """
     area = 0.5
