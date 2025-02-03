@@ -21,7 +21,24 @@ def solve_linear_system(Aaug, initial_guess, iterations=15):
     return GaussSeidel(deepcopy(Aaug), deepcopy(initial_guess), iterations)
 
 def main():
-    pass
+    """
+    Main function to solve and print the solutions of the linear equations
+    using the Gauss-Seidel method.
+    """
+
+    # First system of equations:
+    Aaug1 = [[3, 1, -1, 2],[1, 4, 1, 12],[2, 2, 1, 10]]
+    x1 = [0, 0, 0]  # Starting with a zero vector
+
+    sol1 = solve_linear_system(Aaug1, x1)
+    print("Solution for the first system is:")
+    for i, val in enumerate(sol1, start=1):
+        print(f"x{i} = {val:.4f}")
+    print()
+
+    # Second system of equations:
+    Aaug2 = [[1, -10, 2, 4, 2],[3, 1, 4, 12, 12],[9, 2, 3, 4, 21],[-1, 2, 7, 3, 37]]
+    x2 = [0, 0, 0, 0]  # Starting with a zero vector
 
 if __name__=="__main":
     main()
