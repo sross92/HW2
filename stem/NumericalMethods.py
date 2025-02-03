@@ -61,8 +61,21 @@ def Simpson(fn, args, N=100):
     :param N: number of subintervals (should be even to prevent incrementation)
     :return: the area beneath the function between lhl and rhl
     """
-    area = 0.5
-    return area
+    mu, sig, a, b = args  #defines the arguments
+
+    if N % 2 == 1:
+        N += 1  # Ensure N is even
+    h = (b - a) / N
+    s = fn((a, mu, sig)) + fn((b, mu, sig))
+
+    for i in range(1, N, 2):  # Odd indices
+        s += 4 * fn((a + i * h, mu, sig))
+
+    for i in range(2, N - 1, 2):  # Even indices
+        s += 2 * fn((a + i * h, mu, sig))
+
+    return (h / 3) * s #returns the integral
+
 
 def Secant(fcn, x0, x1, maxiter=10, xtol=1e-5):
     """
