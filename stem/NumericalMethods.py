@@ -87,7 +87,22 @@ def Secant(fcn, x0, x1, maxiter=10, xtol=1e-5):
     :param xtol:  exit if the |xnewest - xprevious| < xtol
     :return: tuple with: (the final estimate of the root (most recent value of x), number of iterations)
     """
-    pass
+    for _ in range(maxiter):
+        f0, f1 = fcn(x0), fcn(x1)
+
+        if abs(f1 - f0) < 1e-12:  # Avoid division by zero
+            print("Warning: Small denominator in Secant method.")
+            return x1
+
+        x_new = x1 - f1 * (x1 - x0) / (f1 - f0)  # Secant formula
+
+        if abs(x_new - x1) < xtol:  # Convergence check
+            return x_new
+
+        # Update values for next iteration
+        x0, x1 = x1, x_new
+
+    return x1  # Return last computed value if maxiter is reached
 
 def GaussSeidel(Aaug, x, Niter = 15):
     """
