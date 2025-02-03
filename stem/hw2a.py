@@ -14,7 +14,11 @@ def main():
     3. Pass args, and a callback function (GPDF) to Probability
     4. In probability, pass along GPDF to Simpson along with the appropriate args tuple
     5. Return the required probability from Probability and print to screen.
-    :return: Nothing to return, just print results to screen.
+        Compute probabilities using the Probability function and print them in the required format.
+
+    - P(x<105 | N(100,12.5))
+    - P(x>μ+2σ | N(100,3))
+    :return: None (prints results to the console)
     """
     # Compute P(x < 105 | N(100,12.5))
     mu1, sigma1 = 100, 12.5
