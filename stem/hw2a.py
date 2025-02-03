@@ -1,6 +1,6 @@
 #region imports
 from math import sqrt, pi, exp
-from NumericalMethods import GPDF, Simpson, Probability
+from NumericalMethods import GPDF, Probability
 #endregion
 
 #region function definitions
