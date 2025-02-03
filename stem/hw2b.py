@@ -6,7 +6,8 @@ from math import sqrt, pi, exp, cos
 
 #region function definitions
 def fn1(x):
-    pass
+    """ Function 1: x - 3cos(x) """
+    return x - 3 * cos(x)
 
 def fn2(x):
     """ Function 2: cos(2x) * x^3 """
