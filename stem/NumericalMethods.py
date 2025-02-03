@@ -82,8 +82,7 @@ def Secant(fcn, x0, x1, maxiter=10, xtol=1e-5):
     This funciton implements th Secant method to find the root of an equation.  You should write your equation in a form
     fcn = 0 such that when the correct value of x is selected, the fcn actually equals zero (or very close to it).
     :param fcn: the function for which we want to find the root
-    :param x0: x value in neighborhood of root (or guess 1)
-    :param x1: another x value in neighborhood of root (or guess x0+1)
+    :param x0,x1: x values in neighborhood of root
     :param maxiter: exit if the number of iterations (new x values) equals this number
     :param xtol:  exit if the |xnewest - xprevious| < xtol
     :return: tuple with: (the final estimate of the root (most recent value of x), number of iterations)
