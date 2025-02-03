@@ -16,14 +16,20 @@ def main():
     5. Return the required probability from Probability and print to screen.
     :return: Nothing to return, just print results to screen.
     """
-    #region testing user input
-    # The following code solicites user input through the CLI.
-    mean = input("Population mean? ")
-    stDev = input("Standard deviation?")
-    c = input("c value?")
-    GT = True if input("Probability greater than c?").lower() in ["y","yes","true"] else "False"
-    print("P(x"+(">" if GT else "<") + c +"|"+mean+", "+stDev +")")
-    #endregion
+    # Compute P(x < 105 | N(100,12.5))
+    mu1, sigma1 = 100, 12.5
+    c1 = 105
+    prob1 = Probability(GPDF, (mu1, sigma1), c1, GT=False) #call probability function
+
+    # Compute P(x > μ+2σ | N(100,3))
+    mu2, sigma2 = 100, 3
+    c2 = mu2 + 2 * sigma2  # 106
+    prob2 = Probability(GPDF, (mu2, sigma2), c2, GT=True) #call probability function
+
+    # Print the results in the required format
+    print("P(x<{:.2f}|N({:.0f},{:.1f}))={:.2f}".format(c1, mu1, sigma1, prob1))
+    print("P(x>{:.2f}|N({:.0f},{:.0f}))={:.2f}".format(c2, mu2, sigma2, prob2))
+
 #endregion
 
 if __name__ == "__main__":
