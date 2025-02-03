@@ -112,8 +112,19 @@ def GaussSeidel(Aaug, x, Niter = 15):
     :param Niter:  Number of iterations to run the GS method
     :return: the solution vector x
     """
-    Aaug = GE.MakeDiagDom(Aaug)
-    pass
+    N = len(Aaug)
+
+    for _ in range(Niter):
+        for i in range(N):
+            # Calculate the sum for the new x_i (excluding A[i, i] * x_i)
+            sum_ax = 0
+            for j in range(N):
+                if j != i:
+                    sum_ax += Aaug[i][j] * x[j]
+
+            x[i] = (Aaug[i][N] - sum_ax) / Aaug[i][i]  # Solve for x[i]
+
+    return x
 
 def main():
     '''
